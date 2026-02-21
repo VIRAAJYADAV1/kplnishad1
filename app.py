@@ -53,11 +53,11 @@ def download_video(job_id, url, format_type, quality):
             }]
         else:
             if quality == '4k':
-                ydl_opts['format'] = 'bestvideo[height<=2160]+bestaudio/best'
+                ydl_opts['format'] = 'bestvideo[height<=2160]+bestaudio/best / best[height<=2160] / best'
             elif quality == '1080p':
-                ydl_opts['format'] = 'bestvideo[height<=1080]+bestaudio/best'
+                ydl_opts['format'] = 'bestvideo[height<=1080]+bestaudio/best / best[height<=1080] / best'
             elif quality == '720p':
-                ydl_opts['format'] = 'bestvideo[height<=720]+bestaudio/best'
+                ydl_opts['format'] = 'bestvideo[height<=720]+bestaudio/best / best[height<=720] / best'
             else:
                 ydl_opts['format'] = 'best'
             ydl_opts['merge_output_format'] = 'mp4'
