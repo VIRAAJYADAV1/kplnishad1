@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPL VidoYT - Free YouTube Downloader 4K MP3</title>
+    <meta name="keywords" content="youtube downloader, yt mp3, 4k video download">
+    <meta name="description" content="Free YouTube video and audio downloader by KPL Nishad.">
+    <!-- Links to static files -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="highlight">KPL</span> VidoYT</h1>
+            <p>Download YouTube Videos in 4K & MP3 instantly.</p>
+        </header>
+
+        <div class="downloader-box">
+            <input type="text" id="urlInput" placeholder="Paste YouTube link here..." autocomplete="off">
+
+            <div class="options">
+                <select id="formatSelect">
+                    <option value="video">Video (MP4)</option>
+                    <option value="audio">Audio (MP3)</option>
+                </select>
+
+                <select id="qualitySelect">
+                    <option value="4k">4K (2160p)</option>
+                    <option value="1080p">High (1080p)</option>
+                    <option value="720p" selected>Standard (720p)</option>
+                </select>
+            </div>
+
+            <button id="downloadBtn" onclick="startDownload()">
+                Download <i class="fas fa-download"></i>
+            </button>
+
+            <div id="statusContainer" class="hidden">
+                <div class="progress-bar-bg">
+                    <div id="progressBar" class="progress-bar-fill"></div>
+                </div>
+                <p id="statusText">Initializing...</p>
+            </div>
+
+            <div id="resultContainer" class="hidden">
+                <a id="downloadLink" href="#" class="btn-success" download>
+                    <i class="fas fa-cloud-download-alt"></i> Save File
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="owner-info">
+                <p>Owner: <strong>KPL Nishad</strong> | Admin: <strong>VIRAAJ YADAV</strong></p>
+            </div>
+            <div class="social-links">
+                <!-- Replace # with your actual links -->
+                <a href="https://t.me/your_telegram_id" target="_blank" class="social-icon" title="Telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/your_whatsapp_number" target="_blank" class="social-icon" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:your_email@gmail.com" class="social-icon" title="Gmail">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
