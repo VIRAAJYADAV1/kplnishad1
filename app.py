@@ -32,8 +32,17 @@ def download_video(job_id, url, format_type, quality):
             'progress_hooks': [progress_hook],
             'quiet': True,
             'no_warnings': True,
-            'extractor_args': {'youtube': ['player_client=android,web']}
+            'extractor_args': {'youtube': ['player_client=android,web']},
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-us,en;q=0.5',
+            }
         }
+        
+        # Load cookies from file if it exists (for server deployments)
+        if os.path.exists("cookies.txt"):
+            ydl_opts['cookiefile'] = "cookies.txt"
         
         if format_type == 'audio':
             ydl_opts['format'] = 'bestaudio/best'
