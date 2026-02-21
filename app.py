@@ -27,11 +27,12 @@ def download_video(job_id, url, format_type, quality):
             elif d['status'] == 'finished':
                 jobs[job_id]['progress'] = 100
         
-        ydl_opts = {
+        ydl_opts: dict = {
             'outtmpl': filepath,
             'progress_hooks': [progress_hook],
             'quiet': True,
-            'no_warnings': True
+            'no_warnings': True,
+            'extractor_args': {'youtube': ['player_client=android,web']}
         }
         
         if format_type == 'audio':
